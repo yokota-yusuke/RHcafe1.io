@@ -1,0 +1,747 @@
+@charset "UTF-8";
+
+*{
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ◆メインビジュアル設定－－－－－－－－－－－－－－－－－－－－－*/
+body {
+    font-family: "Helvetica Neue", "Arial", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    margin: 0 auto;  /* 左右の余白を自動にすることで中央寄せ */
+    background-size: cover;
+    min-height: 100vh;
+    padding: 0; /* 左右のパディングを削除 */
+}
+
+a{
+    text-decoration: none;
+}
+
+/* すべてのh4要素に共通のスタイルを設定 */
+h4 {
+    text-align: center;                     /* 水平方向の中央揃え */
+    border-bottom: none;                    /* 下線なし */
+    padding-bottom: 0.3em;                  /* 下部に余白を追加 */
+    margin-bottom: 1em;                     /* 下部に余白を追加 */
+    display: inline-block;                  /* インラインブロック要素として表示 */
+    font-size: 1.5em;                       /* フォントサイズを1.5emに設定 */
+}
+
+/* すべてのh4要素の後に疑似要素を追加 */
+h4::after {
+    content: '';                            /* コンテンツを空に設定 */
+    display: block;                         /* ブロック要素として表示 */
+    width: 100%;                            /* 幅を100%に設定 */
+    height: 4px;                            /* 高さを4pxに設定 */
+    background-color: #e03131;            /* 背景色を#e03131に設定 */
+    margin-top: 0px;                        /* 上部に余白を追加 */
+}
+
+.menu-header h2,
+.about-header h2,
+.access-header h2,
+.contact-header h2 {
+    font-weight: bold;                      /* 太字に設定 */
+    color: white;                         /* 文字色を白に設定 */
+    font-size: 3.5rem;                        /* フォントサイズを3remに設定 */
+}
+
+
+/* ◆TOP設定－－－－－－－－－－－－－－－－－－－－－ */
+.top-header header {
+    background-image: url("mainvisual.jpg"); /* 背景画像を設定 */
+    background-size: cover;                  /* 背景画像を要素全体に表示 */
+    background-position: center;             /* 背景画像を中央に配置 */
+    height: 100vh;                           /* 高さを100vhに設定 */
+}
+
+/* ◆ロゴ画像設定 */
+.logo{
+    position: absolute;                     /* 絶対位置に設定 */
+    top:50vh;                              /* 上からの位置を50vhに設定 */
+    left: 50%;                              /* 左からの位置を50%に設定 */
+    transform: translate(-50%, -50%);       /* 水平方向と垂直方向に-50%移動 */
+    width: 80vw;                           /* 幅を80vwに設定 */
+    max-width: 100%;                        /* 最大幅を100%に設定 */
+    height: auto;                           /* 高さを自動調整 */
+}
+
+.nav-p {
+    position: relative;                     /* 親要素からの相対位置に */
+    font-weight: bold;                      /* 太字に設定 */
+    top: 0;                                 /* 上からの位置を1vhに設定 */
+    right: 0;                               /* 右からの位置を 0 に設定 */
+}
+
+
+/* ◆メニューバーのフォント設定*/
+.top-header a {
+    display: inline-block;                  /* インラインブロック要素として表示 */
+    color: #ffffff;                       /* 文字色を白に設定 */
+    font-size: 1.25vw;                      /* フォントサイズを1.25vwに設定 */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);/* テキストシャドウを設定 */
+}
+
+.gnav-flex-container {
+    display: flex;                          /* フレックスボックスとして表示 */
+    height: 50px;                           /* 高さを50pxに設定 */
+    width: 100%;                            /* 幅を 100% に設定 */
+    justify-content:flex-end;               /* 右寄せ */
+}
+
+li.gnav-flex-item {
+    display: flex;                          /* フレックスボックスとして表示 */
+    align-items: center;                    /* 垂直方向に中央揃え */
+}
+
+a.gnav-menu-link:hover {
+    color: #e03131;                       /* ホバー時の文字色を#e03131に設定 */
+    transition: color 0.3s;                 /* 色の変化に0.3秒のトランジションを設定 */
+}
+
+a.gnav-menu-link {
+    padding-bottom: 0.2em;                  /* 下部に余白を追加 */
+}
+
+
+/* ◆MENU設定－－－－－－－－－－－－－－－－－－－－－*/
+/* メニューセクション全体のスタイル */
+.menu-section {
+    margin-top: 10px;                       /* 上マージンを10pxに設定 */
+    margin-bottom: 100px;                   /* 下マージンを100pxに設定 */
+}
+
+/* メニューヘッダーのスタイル */
+.menu-header {
+    background-image: url("menu.jpg");      /* 背景画像に "menu.jpg" を設定 */
+    background-position: center;            /* 背景画像を中央に配置 */
+    text-align: center;                     /* テキストを中央揃え */
+    padding: 70px 0;                        /* 上下のパディングを70pxで固定、左右を0に設定 */
+    margin-bottom: 20px;                    /* 下マージンを20pxに設定 */
+    background-attachment: fixed;           /* 背景画像を固定 */
+    background-size: cover;                 /* または background-size: auto; */
+    background-repeat: no-repeat;
+}
+
+
+/* メニューコンテナのスタイル */
+.menu-container {
+    display: flex;                          /* フレックスボックスレイアウトを使用 */
+    gap: 20px;                              /* アイテム間の隙間を20pxに設定 */
+    max-width: 1000px;                      /* 最大幅を1000pxに設定 */
+    margin:auto;                            /* 左右のマージンを自動で設定（中央揃え） */
+    margin-top: 4vw;                        /* 上マージンを5vwに設定 */
+    justify-content: space-between;         /* アイテム間を均等に配置 */
+    max-width: 1000px;                      /* 最大幅を1000pxに設定 */
+    padding: 0 16px;                        /* 左右に16pxのpaddingを追加 */
+}
+
+/* 1列目のメニューセクションのスタイル */
+.menu1-section {
+    width: 50%;                             /* 幅を50%に設定 */
+    max-width: 500px;                       /* 最大幅を500pxに設定 */
+    text-align: center;                     /* テキストを中央揃え */
+    border-right: 1px solid #000;         /* 右側に1pxの黒実線ボーダーを設定 */
+}
+
+/* メニューリストアイテムの下線スタイル */
+.menu-ul li::after {
+    content: '';                            /* コンテンツを空に設定（疑似要素） */
+    position: absolute;                     /* 絶対位置に設定 */
+    left: 0;                                /* 左端からの位置を0に設定 */
+    bottom: 0;                              /* 下端からの位置を0に設定 */
+    width: calc(100% - 5vw);                /* 幅を100%から5vw引いた値に設定 */
+    border-bottom: 1px dashed #000;       /* 下側に1pxの黒点線ボーダーを設定 */
+}
+
+/* メニューリストのフォントサイズ */
+.menu-ul {
+    font-size: 16px;                        /* フォントサイズを16pxに設定 */
+}
+
+/* 2列目用のラッパーのスタイル */
+.right-sections {
+    display: flex;                          /* フレックスボックスレイアウトを使用 */
+    flex-direction: column;                 /* 縦方向にアイテムを配置 */
+    width: 50%;                             /* 幅を50%に設定 */
+}
+
+/* 2列目、3列目のメニューセクションのスタイル */
+.menu2-section,
+.menu3-section {
+    text-align: center;                     /* テキストを中央揃え */
+    max-width: 500px;                       /* 最大幅を500pxに設定 */
+}
+
+.menu3-section {
+    margin-top:7vw ;                        /* menu2とmenu3間に空白 */
+}
+
+/* リストのスタイル */
+ul{
+    list-style: none;                       /* リストの記号を非表示 */
+    padding: 0;                             /* パディングを0に設定 */
+    margin: 0;                              /* マージンを0に設定 */
+}
+
+li {
+    display: flex;                          /* フレックスボックスレイアウトを使用 */
+    margin: 0 10px;                         /* 左右のマージンを10pxに設定 */
+    padding: 5px;                           /* パディングを5pxに設定 */
+    font-size: 1rem;                        /* フォントサイズを1remに設定 */
+    margin-bottom: 10px;                    /* 下マージンを10pxに設定 */
+    justify-content: space-between;         /* アイテム間を均等に配置 */
+    align-items: center;                    /* アイテムを垂直方向に中央揃え */
+    position: relative;                     /* 相対位置に設定 */
+}
+
+span {
+    width:  3vw;                            /* 幅を3vwに設定 */
+}
+
+
+/* ◆ABOUT設定－－－－－－－－－－－－－－－－－－－－－*/
+.about-header {
+    background-image: url("about.jpg");     /* 背景画像に "about.jpg" を設定 */
+    background-position: center;            /* 背景画像を中央に配置 */
+    text-align: center;                     /* テキストを中央揃え */
+    padding: 70px 0;                        /* 上下のパディングを70pxで固定、左右を0に設定 */
+    margin-bottom: 1.25vw;                  /* 下マージンを1.25vwに設定 */
+    background-attachment: fixed;           /* 背景画像を固定 */
+    background-size: cover;                 /* または background-size: auto; */
+}
+
+/* ABOUTセクションのコンテンツ全体を囲むコンテナのスタイル */
+.about-container {
+    display: flex;                          /* フレックスボックスレイアウトを使用 */
+    flex-direction: column;                 /* アイテムを縦方向に配置 */
+    align-items: center;                    /* アイテムを水平方向に中央揃え */
+    text-align: center;                     /* テキストを中央揃え */
+    max-width: 1000px;                      /* 最大幅を1000pxに設定 */
+    margin: 0 auto;                         /* 左右の余白を自動にすることで中央寄せ */
+    margin-top: 4vw;                        /* 上マージンを5vwに設定 */
+    max-width: 1000px;                      /* 最大幅を1000pxに設定 */
+    padding: 0 16px;                        /* 左右に16pxのpaddingを追加 */
+}
+
+/* ABOUTセクションの画像を囲むコンテナのスタイル */
+.about-img {
+    display: flex;                          /* フレックスボックスレイアウトを使用 */
+    justify-content: center;                /* アイテムを水平方向に中央揃え */
+    width: 50%;                             /* 幅を50%に設定 */
+    flex-direction: column;                 /* アイテムを縦方向に配置 */
+    height: auto;                           /* 高さを自動調整 */
+    align-items: center;                    /* アイテムを垂直方向に中央揃え */
+    margin-top: 1vw;                        /* 上マージンを5vwに設定 */
+    margin-bottom: 3vw;                     /* 下マージンを3vwに設定 */
+}
+
+/* ABOUTセクションの画像のスタイル */
+.about-img img {
+    width: 40%;                             /* 幅を40%に設定 */
+    max-width: 300px;                       /* 最大幅を300pxに設定 */
+}
+
+/* ABOUTセクションの1枚目の画像のスタイル */
+.about-img img:first-child {
+    position: relative;                     /* 相対位置に設定 */
+    right: 3vw;                             /* 右に3vw移動 */
+    z-index: 1;                             /* 重なり順を1に設定 */
+}
+
+/* ABOUTセクションの2枚目の画像のスタイル */
+.about-img img:last-child {
+    position: relative;                     /* 相対位置に設定 */
+    left: 3vw;                              /* 左に3vw移動 */
+    z-index: 0;                             /* 重なり順を0に設定 */
+    margin-top: -4.5vw;                     /* 上マージンを-4.5vwに設定 */
+}
+
+/* ABOUTセクションのテキストコンテンツを囲むコンテナのスタイル */
+.about-content {
+    display: grid;                          /* グリッドレイアウトを使用 */
+    grid-template-columns: 1fr 1fr;         /* 2カラムのグリッドを生成 */
+    gap: 1.25vw;                            /* アイテム間の隙間を1.25vwに設定 */
+    max-width: 930px;                       /* テキスト～の最大幅を930pxに設定 */
+    margin: 0 auto;                         /* 左右のマージンを自動で設定（中央揃え） */
+    font-size: 1rem;                        /* フォントサイズを1remに設定 */
+}
+
+/* ABOUTセクションのテキストのスタイル */
+.about-text p {
+    text-align: left;                       /* テキストを左揃え */
+    line-height: 1.6;                       /* 行の高さを1.6倍に設定 */
+}
+
+/* ボタンを囲むコンテナのスタイル */
+.button {
+    display: flex;                          /* フレックスボックスレイアウトを使用 */
+    justify-content: center;                /* アイテムを水平方向に中央揃え */
+    width: 100%;                            /* 幅を100%に設定 */
+    margin-top: 2.5vw;                      /* 上マージンを2.5vwに設定 */
+    margin-bottom: 7vw;                     /* 下マージンを6.25vwに設定 */
+
+}
+
+/* ボタンのスタイル */
+button {
+    display: inline-flex;                    /* インラインフレックスボックスレイアウトを使用 */
+    justify-content: center;                 /* アイテムを水平方向に中央揃え */
+    align-items: center;                     /* アイテムを垂直方向に中央揃え */
+    background-color: #e03131;             /* 背景色を#e03131に設定 */
+    color: white;                          /* 文字色を白に設定 */
+    border: 0.1vw solid #e03131;           /* ボーダーを0.1vwの#e03131の実線に設定 */
+    padding: 15px;                           /* 上下のパディングを5px削除、左右を15pxに設定 */
+    width: 160px;                            /* 横幅160pxを追加 */
+    text-align: center;                      /* テキストを中央揃え */
+    text-decoration: none;                   /* テキストの装飾をなしに設定 */
+    font-size: 1rem;                         /* フォントサイズを1remに設定 */
+    cursor: pointer;                         /* カーソルをポインターに設定 */
+    letter-spacing: 0;                       /* 文字間隔を0に設定 */
+    transition: all 0.7s ease;               /* すべての変化を0.7秒かけて滑らかに変化させる */
+}
+
+/* ホバー時のボタンのスタイル */
+button:hover {
+    background-color: white;               /* 背景色を白に設定 */
+    color: #e03131;                        /* 文字色を#e03131に設定 */
+    border-color: #e03131;                 /* ボーダー色を#e03131に設定 */
+    letter-spacing: 2px;                     /* 文字間隔を2pxに設定 */
+}
+
+
+/* ◆ACCESS設定－－－－－－－－－－－－－－－－－－－－－*/
+/* アクセスセクションのヘッダーのスタイル */
+.access-header {
+    background-image: url("access.jpg");/* 背景画像に "access.jpg" を設定 */
+    background-position: center;             /* 背景画像を中央に配置 */
+    text-align: center;                      /* テキストを中央揃え */
+    padding: 70px 0;                        /* 上下のパディングを70pxで固定、左右を0に設定 */
+    background-attachment: fixed;            /* 背景画像を固定 */
+    background-size: cover;                  /* または background-size: auto; */
+}
+
+/* アクセスセクションのコンテンツ全体を囲むコンテナのスタイル */
+.access-container {
+    display: flex;                           /* フレックスボックスレイアウトを使用 */
+    flex-direction: column;                  /* アイテムを縦方向に配置 */
+    align-items: center;                     /* アイテムを水平方向に中央揃え */
+    max-width: 1000px;                      /* 最大幅を1000pxに設定 */
+    margin: 0 auto;                          /* 左右の余白を自動にすることで中央寄せ */
+    margin-top: 4vw;                         /* 上マージンを5vwに設定 */
+    padding: 0 16px;                        /* 左右に16pxのpaddingを追加 */
+}
+
+.access-section {
+    width: 70vw;                             /* 幅を700vwに設定 */
+    text-align: left;                        /* access-section 内の要素を中央揃えにする */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;                         /*「access-sectionの最大幅を700pxに設定」を削除することでマップが中央揃え */
+}
+
+/* マップを囲むコンテナのスタイル */
+.map-container {
+    position: relative;                      /* 相対位置に設定 */
+    width: 700px;                            /* 幅を700pxに設定 */
+    height: 300px;                           /* 高さを300pxに設定 */
+    margin: 0 auto;                          /* 左右のマージンを自動で設定（中央揃え） */
+    max-width: 700px;                          /* access-sectionの最大幅を700pxに設定 */
+}
+
+/* マップのiframeのスタイル */
+.map-container iframe {
+    width: 100%;                             /* 幅を100%に設定 */
+    height: 100%;                            /* 高さを100%に設定 */
+    filter: grayscale(100%);                 /* グレースケールフィルターを適用 */
+}
+
+/* 住所のスタイル */
+address {
+    text-align: left;                         /* 上マージンを1vwに設定 */
+    margin-top: 1vw;                       /* 下マージンを7vwに設定 */
+    margin-bottom: 7vw;
+}
+
+
+/* ◆CONTACT設定－－－－－－－－－－－－－－－－－－－－－*/
+/* コンタクトセクションのヘッダーのスタイル */
+.contact-header {
+    background-image: url("contact.jpg");    /* 背景画像に "contact.jpg" を設定 */
+    background-position: center;             /* 背景画像を中央に配置 */
+    text-align: center;                      /* テキストを中央揃え */
+    padding: 70px 0;                        /* 上下のパディングを70pxで固定、左右を0に設定 */
+    margin-bottom: 1.25vw;                   /* 下マージンを1.25vwに設定 */
+    background-attachment: fixed;            /* 背景画像を固定 */
+    background-size: cover;                  /* または background-size: auto; */
+}
+
+/* コンタクトセクションのコンテンツ全体を囲むコンテナのスタイル */
+.contact-container {
+    display: flex;                          /* フレックスボックスレイアウトを使用 */
+    flex-direction: column;                 /* アイテムを縦方向に配置 */
+    align-items: center;                    /* アイテムを水平方向に中央揃え */
+    width: 100%;                            /* 幅を100%に設定 */
+    margin: 0 auto;                         /* 左右のマージンを自動で設定（中央揃え） */
+    margin-top: 4vw;                        /* 上マージンを5vwに設定 */
+    max-width: 1000px;                      /* 最大幅を1000pxに設定 */
+    padding: 0 16px;                        /* 左右に16pxのpaddingを追加 */
+}
+
+/* コンタクトフォームを囲むコンテナのスタイル */
+.contact-section {
+    display: flex;                           /* フレックスボックスレイアウトを使用 */
+    flex-direction: column;                  /* アイテムを縦方向に配置 */
+    align-items: center;                     /* アイテムを水平方向に中央揃え */
+    width: 70%;                              /* 幅を70%に設定 */
+    text-align: center;                      /* テキストを中央揃え */
+    margin: 0 auto 1.25vw;                   /* 上下のマージンを0、左右を自動、下マージンを1.25vwに設定 */
+}
+
+/* コンタクトフォームのラベルのスタイル */
+.contact-section label {
+    display: block;                          /* ブロック要素として表示 */
+    margin-bottom: 0.25vw                    /* 下マージンを0.25vwに設定 */
+}
+
+/* 太字のラベルのスタイル */
+.label-bold {
+    font-weight: bold;                       /* 太字に設定 */
+    text-align: center;                      /* テキストを中央揃え */
+    font-size: 1rem;                         /* フォントサイズを1remに設定 */
+}
+
+/* コンタクトセクションの段落の太字のラベルのスタイル */
+.contact-section p.label-bold {
+    font-size: 1rem;                         /* フォントサイズを1remに設定 */
+}
+
+/* コンタクトセクションの各入力項目を囲むdivのスタイル */
+.contact-section div {
+    margin-bottom: 1.25vw;                   /* 下マージンを1.25vwに設定 */
+}
+
+/* コンタクトセクションの各入力項目を囲むdivのスタイル */
+.contact-section > div {
+    width: 100%;                             /* 幅を100%に設定 */
+    display: flex;                           /* フレックスボックスレイアウトを使用 */
+    flex-direction: column;                  /* アイテムを縦方向に配置 */
+    align-items: center;                     /* アイテムを水平方向に中央揃え */
+    text-align: center;                      /* テキストを中央揃え */
+}
+
+.contact-section input[type="text"],
+.contact-section input[type="email"],
+.contact-section textarea {
+    width: 700px;                            /* 幅を700pxに設定 */
+    padding: 10px 10px;                      /* 上下のパディングを10px、左右を10pxに設定（0にすると端すぎるため10pxに設定） */
+    border: 1px solid #ccc;                /* ボーダーを1pxの#cccの実線に設定 */
+    border-radius: 0;                        /* ボーダーの角を丸めない */
+    text-align: left;                        /* テキストを左寄せにする */
+    border-color: black;                   /* 枠線を黒色に設定 */
+}
+
+/* ラジオボタンとチェックボックスのラベルのスタイル */
+.contact-section input[type="radio"] + label,
+.contact-section input[type="checkbox"] + label {
+    display: inline-block;                   /* インラインブロック要素として表示 */
+    margin-right: 20px;                      /* 右マージンを20pxに設定 */
+    border-color: black;                   /* 枠線を黒色に設定 */
+}
+
+/* ラジオボタンとチェックボックスのスタイル */
+.contact-section input[type="radio"],
+.contact-section input[type="checkbox"] {
+    margin-right: 5px;                       /* 右マージンを5pxに設定 */
+    margin-bottom: 10px;                     /* 下マージンを10pxに設定 */
+    border-color: black;                   /* 枠線を黒色に設定 */
+}
+
+/* セレクトボックスのスタイル */
+.contact-section select {
+    width: 100%;                             /* 幅を100%に設定 */
+    padding: 10px;                           /* パディングを10pxに設定 */
+    border: 1px solid #ccc;                /* ボーダーを1pxの#cccの実線に設定 */
+    appearance: button;                      /* ブラウザデフォルトのスタイルを無効化 */
+    border-color: black;                   /* 枠線を黒色に設定 */
+}
+
+/* 送信ボタンのスタイル */
+.contact-section button[type="submit"] {
+    padding: 1em;                          /* 高さを1emに設定 */
+    width: 50%;                              /* 幅を300pxに設定 → 40%に修正 */
+    margin-bottom: 2vw ;
+}
+
+/* ホバー時の送信ボタンのスタイル */
+.contact-section button[type="submit"]:hover {
+    background-color: white;               /* 背景色を白に設定 */
+    color: #e03131;                        /* 文字色を#e03131に設定 */
+}
+
+.contact-section button[type="submit"]:active {
+    background-color: #e03131;              /* 背景色を#e03131に設定 */
+    color: white;                           /* 文字色を白に設定 */
+    top: 3px;
+    transition-duration: 0s;                  /* 変化時間を0秒に設定 */
+}
+
+/* コンタクトセクションのボタンのスタイル */
+.contact-section button {
+    position: relative;
+    background-color: #e03131;             /* 背景色を#e03131に設定 */
+    color: white;                          /* 文字色を白に設定 */
+    border: none;                            /* ボーダーをなしに設定 */
+    padding: 5px 20px;                       /* 上下のパディングを5px、左右を20pxに設定 */
+    text-align: center;                      /* テキストを中央揃え */
+    text-decoration: none;                   /* テキストの装飾をなしに設定 */
+    display: inline-block;                   /* インラインブロック要素として表示 */
+    font-size: 15px;                         /* フォントサイズを15pxに設定 */
+    cursor: pointer;                         /* カーソルをポインターに設定 */
+    border: 1px solid black;               /* ボーダーを1pxの黒実線に設定 */
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);/* 影を付ける */
+    transition: all 0.7s;
+}
+
+.contact-section button p {
+    font-size: 1rem;
+}
+
+/* コンタクトセクションの段落のスタイル */
+.contact-section p {
+    font-size: 0.75rem;                      /* フォントサイズを0.75remに設定 */
+}
+
+/* フッターのスタイル */
+footer {
+    margin-top: 1.25vw;                      /* 上マージンを1.25vwに設定 */
+}
+
+
+/* ◆SP向け－－－－－－－－－－－－－－－－－－－－－ */
+@media screen and (max-width: 415px) {       /* 画面幅が415px以下の場合に適用されるスタイル */
+
+    /* 本文全体のフォントサイズ */
+    body {
+        font-size: 1rem;
+    }
+
+    /* ヘッダーの高さ */
+    .top-header header {
+        max-width: 1000px;                  /* 最大幅を1000pxに設定 */
+        background-attachment: scroll;       /* パララックス固定の解除 → scrollのため解除されている */
+    }
+
+    /* ロゴの位置と幅 */
+    .logo {
+        top: 450px;
+        width: 80%;
+    }
+
+    /* ヘッダーのナビゲーションリンクのフォントサイズ */
+    .top-header a {
+        font-size: 3.5vw;
+    }
+
+    /* 各セクションの見出し (h2) のスタイル */
+    .menu-header h2,
+    .about-header h2,
+    .access-header h2,
+    .contact-header h2 {
+        height: 10px;
+        display: flex;                       /* フレックスボックスレイアウトを使用 */
+        align-items: center;                 /* 垂直方向に中央揃え */
+        justify-content: center;             /* 水平方向に中央揃え */
+    }
+
+    /* 各セクションの小見出し (h4) のスタイル */
+    .menu-header h4,
+    .about-header h4,
+    .access-header h4,
+    .contact-header h4 {
+        text-align: center;                  /* テキストを中央揃え */
+        display: flex;                       /* フレックスボックスレイアウトを使用 */
+        flex-direction: column;              /* アイテムを縦方向に配置 */
+        justify-content: center;             /* 垂直方向に中央揃え */
+    }
+
+    /* メニュー －－－－－－－－－－－－－－－－－－－－－*/
+    .menu-container {
+        flex-direction: column;              /* アイテムを縦方向に配置 */
+        align-items:center;                  /* アイテムを水平方向に中央揃え */
+        width: 90%;
+        margin: 0 auto;                      /* 左右のマージンを自動で設定（中央揃え） */
+        }
+
+    /* 1列目のメニューの幅とボーダー */
+    .menu1-section {
+        width: 100%;
+        max-width: none;                     /* 最大幅の制限を解除 */
+        border-right: none;                  /* 右側のボーダーを削除 */
+        margin: 0;                           /* マージンを0に設定 */
+        margin-top: 4vw;                     /* 上マージンを4vwに設定 */
+    }
+
+    /* メニューヘッダーのパディング */
+    .menu-header {
+        padding: 10vw 0;
+        background-attachment: fixed;        /* scroll→fixedに変更しパララックス固定の解除 */
+        background-size: cover;              /* または background-size: auto; */
+    }
+
+    .menu-ul li::after {
+        content: '';                          /* コンテンツを空に設定（疑似要素） */
+        position: absolute;                   /* 絶対位置に設定 */
+        left: 0;                              /* 左端からの位置を0に設定 */
+        bottom: 0;                            /* 下端からの位置を0に設定 */
+        width: calc(100% - 6vw) !important;   /* 幅を100%から6vw引いた値に設定、「!important」は可能な限り使わない、複雑化のため扱い注意 */
+        border-bottom: 1px dashed #000;     /* 下側に1pxの黒点線ボーダーを設定 */
+    }
+
+    /* 2列目用のラッパーの幅とレイアウト */
+    .right-sections {
+        width: 100%;
+        margin-top: 20px;
+        display: flex;                       /* フレックスボックスレイアウトを使用 */
+        flex-direction: column;              /* アイテムを縦方向に配置 */
+    }
+
+    /* 各メニューセクションの幅 */
+    .menu1-section li,
+    .menu2-section li,
+    .menu3-section li {
+        display: flex;                       /* フレックスコンテナにする */
+        justify-content: space-between;      /* liとspanを両端に配置 */
+        align-items: center;                 /* 垂直方向に中央揃え */
+        width: 95%;
+    }
+
+    /* 各メニューセクションのリストアイテムの下線の幅 */
+    .menu1-section li::after,
+    .menu2-section li::after,
+    .menu3-section li::after {
+        width: 100%;
+    }
+
+    /* ABOUT －－－－－－－－－－－－－－－－－－－－－*/
+
+    /* ABOUTヘッダーのパディング */
+    .about-header {
+        padding: 10vw 0;                     /* 上下のパディングを10vw、左右を0に設定 */
+        background-attachment: fixed;        /* scroll→fixedに変更しパララックス固定の解除 */
+        background-size: cover;              /* または background-size: auto; */
+    }
+
+    .about-container {
+        margin-top: 10vw;                     /* 上マージンを10vwに設定 */
+    }
+
+    /* ABOUTセクションの画像コンテナの幅とマージン */
+    .about-img {
+        width: 90%;                          /* 幅を90%に設定 */
+        margin-bottom: 20px;                 /* 下マージンを20pxに設定 */
+    }
+
+    /* ABOUTセクションの画像の幅 */
+    .about-img img {
+        width: 80%;                          /* 幅を80%に設定 */
+    }
+
+    /* ABOUTセクションの1枚目の画像のマージン */
+    .about-img img:first-child {
+        margin-bottom: -80px;                /* 下マージンを-80pxに設定 */
+        margin-left: -15vw;                  /* 左マージンを-15vwに設定 */
+    }
+
+    /* ABOUTセクションの2枚目の画像のマージン */
+    .about-img img:last-child {
+        margin-top: -20px;                   /* 上マージンを-20pxに設定 */
+        margin-right: -15vw;                 /* 右マージンを-15vwに設定 */
+    }
+
+    p {
+        margin-bottom: 1em; /* または 1rem */
+    }
+
+    /* ABOUTセクションのテキストコンテンツコンテナのレイアウトと幅 */
+    .about-content {
+        grid-template-columns: 1fr;          /* 1カラムのグリッドを生成 */
+        text-align: justify;                 /* テキストの両端揃え */
+        width: 95%;                          /* 幅を90%に設定 */
+    }
+
+    /* ボタンのマージンとパディング */
+    button {
+        margin-top: 5vw;                     /* 上マージンを5vwに設定 */
+        margin-bottom: 10vw;                 /* 下マージンを10vwに設定 */
+        padding: 3vw 6vw;                    /* 上下のパディングを3vw、左右を6vwに設定 */
+    }
+
+    /* ACCESS －－－－－－－－－－－－－－－－－－－－－*/
+    /* アクセスセクションの幅とマージン */
+    .access-section {
+        width: 90%;                         /* 幅を300pxに設定 */
+        margin: 0 auto;
+        }
+
+    .access-container {
+        margin-top: 10vw;                     /* 上マージンを10vwに設定 */
+    }
+
+    /* マップコンテナの幅と高さ */
+    .map-container {
+        width: 100%;                         /* 幅を100%に設定 */
+        /* height: 500px;                        「高さを500pxに設定」を削除 */
+        }
+
+    /* アクセスヘッダーのパディング */
+    .access-header {
+        padding: 10vw 0;                     /* 上下のパディングを10vw、左右を0に設定 */
+        background-attachment: fixed;        /* scroll→fixedに変更しパララックス固定の解除 */
+        background-size: cover;              /* または background-size: auto; */
+    }
+
+    /* 住所のテキストのスタイル */
+    .address-text {
+        text-align: left;                    /* テキストを左揃え */
+        margin-top: 5vw;                     /* 上マージンを5vwに設定 */
+        margin-bottom: 15vw;                 /* 下マージンを15vwに設定 */
+        }
+
+    /* CONTACT －－－－－－－－－－－－－－－－－－－－－*/
+
+    /* コンタクトヘッダーのパディング */
+    .contact-header {
+        padding: 10vw 0;                     /* 上下のパディングを10vw、左右を0に設定 */
+        background-attachment: fixed;        /* scroll→fixedに変更しパララックス固定の解除 */
+        background-size: cover;              /* または background-size: auto; */
+    }
+
+    .contact-container {
+        margin-top: 10vw;                    /* 上マージンを10vwに設定 */
+    }
+
+    /* コンタクトフォームを囲むコンテナの幅 */
+    .contact-section {
+        width: 90vw;                         /* 幅を90vwに設定 */
+    }
+
+    /* テキスト入力、メール入力、テキストエリアの幅とパディング */
+    .contact-section input[type="text"],
+    .contact-section input[type="email"],
+    .contact-section textarea {
+        width: 90%;                          /* 幅を90%に設定 */
+        padding: 10px;                       /* パディングを10pxに設定 */
+    }
+
+    /* 送信ボタンの幅 */
+    .contact-section button[type="submit"] {
+        width: 40vw;                         /* 幅を80%に設定 */
+        margin-bottom: 10vw;
+        align-items: center;                 /* 垂直方向に中央揃え */
+    }
+}
